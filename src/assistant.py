@@ -11,7 +11,6 @@ class Assistant:
     def __init__(self, user, name):
         self.user = user
         self.name = name
-
         self.engine = pyttsx3.init('sapi5')
         self.engine.setProperty('rate', 190)
         self.engine.setProperty('volume', 1.0)
@@ -69,8 +68,10 @@ class Assistant:
         if "google" in query:
             self.speak('What do you want to search on Google, sir?')
             tasks.search_on_google(self.listen())
-        if "youtube" in query:
+        elif "youtube" in query:
             self.speak('What do you want to search on YouTube, sir?')
             tasks.search_on_youtube(self.listen())
-        if "joke" in query:
+        elif "joke" in query:
             self.speak(tasks.get_random_joke())
+        elif "weather" in query:
+            self.speak(tasks.get_weather_report())
