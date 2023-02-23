@@ -3,3 +3,4 @@ python-decouple~=3.7.0
 SpeechRecognition~=3.9.0
 pywhatkit~=5.4
 PyAudio~=0.2.11
+requests~=2.28.2
