@@ -3,7 +3,7 @@ from datetime import datetime
 import speech_recognition as sr
 import logging
 import random
-import pywhatkit as kit
+import src.tasks as tasks
 
 
 class Assistant:
@@ -68,5 +68,9 @@ class Assistant:
     def perform_task(self, query):
         if "google" in query:
             self.speak('What do you want to search on Google, sir?')
-            query = self.listen()
-            kit.search(query)
+            tasks.search_on_google(self.listen())
+        if "youtube" in query:
+            self.speak('What do you want to search on YouTube, sir?')
+            tasks.search_on_youtube(self.listen())
+        if "joke" in query:
+            self.speak(tasks.get_random_joke())
