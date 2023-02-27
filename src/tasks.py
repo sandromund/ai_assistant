@@ -15,10 +15,12 @@ def get_random_joke():
     return requests.get("https://icanhazdadjoke.com/", headers={'Accept': 'application/json'}).json()["joke"]
 
 
-def get_weather_report(c):
-    id = config("OPENWEATHER_APP_ID")
-    res = res = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={id}")
+def get_weather_report():
+    my_id, city = config("OPENWEATHER_APP_ID"), config("CITY")
+    res = requests.get(
+        f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={my_id}&units=metric").json()
     weather = res["weather"][0]["main"]
     temperature = res["main"]["temp"]
     feels_like = res["main"]["feels_like"]
-    return weather, f"{temperature}℃", f"{feels_like}℃"
+    answer = f"The weather is {weather}. The temperature is {temperature}℃ and feels like {feels_like}℃"
+    return answer
