@@ -20,10 +20,10 @@ For the weather report a free account and ID is needed form [OpenWeatherMap](htt
 
 ## How to use
 Say one of the following keywords
-- google: The assistant will ask you what to google
+- Google: The assistant will ask you what to google
 - Joke: The assistant will tell a dad joke
 - YouTube: The assistant will ask you what to open for you 
-- weather: 
+- Weather: The assistant will tell you the current weather in your city
 
 
 # Troubleshooting 
